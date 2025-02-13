@@ -55,10 +55,11 @@ main {
  padding: 1em;
 }
 
-/* Sets the display to grid with a 48px (3 * 16px) gap, a max  */
+/* Sets the display to flex with a flex direction of column and a 32px (2em * 16px) gap, a max width of 1120px (70em * 16px)  */
 section {
- display: grid;
- gap: 3em;
+ display: flex;
+ flex-direction: column;
+ gap: 2em;
  max-inline-size: 70em;
  padding-block: 6em;
  margin-inline: auto;
@@ -70,20 +71,21 @@ section:last-of-type {
  border-block-end: none;
 }
 
-/*  */
+/* Sets the display to block and width to 100% so that it covers the entire width of its parent container */
 section img {
  display: block;
  border-radius: 1em;
- inline-size: 100%;
  order: 0;
 }
 
+/* Sets the display to flex with a flex direction of column */
 article {
  display: flex;
  flex-direction: column;
  order: 1;
 }
 
+/* Sets the font size, font weight, and font color and adds an 8px (.5rem * 16px) margin to the bottom */
 article h2 {
  font-size: 2em;
  font-weight: 500;
@@ -91,14 +93,16 @@ article h2 {
  margin-block-end: .5rem;
 }
 
+/* Sets the font color and line height and adds a 16px (1em * 16px) margin to the bottom of each p element */
 article p {
  color: #656565;
  margin-block-end: 1em;
  line-height: 1.6;
 }
 
+/* Sets the display to flex and aligns the a element vertically and horizontally centered, sets the color and background color, adds 12px (.75em * 16px) vertical padding and 20px (1.25em * 16px) horizontal padding, a border radius of 8px (.5em * 16px), and a 250 millisecond transition (see below) when hovering over the link */
 article a {
- display: inline-flex;
+ display: flex;
  align-items: center;
  justify-content: center;
  padding: .75em 1.25em;
@@ -108,23 +112,29 @@ article a {
  transition: 250ms ease;
 }
 
+/* Sets the background color to a slightly different neon green when hovering over the a element */
 article a:hover {
  background: #25c509;
 }
 
+/* Sets the background and adds 48px (3em * 16px) padding to the footer element */
 footer {
  background: #f6f8fc;
  padding: 3em;
 }
 
+/* Sets the text alignment, font size, and font color of the footer p element */
 footer p {
  text-align: center;
  font-size: .875em;
+ color: #202124;
 }
 
+/* This is a media query that conditionally styles elements when the screen is at least 992px wide */
 @media screen and (min-width: 992px) {
+ /* When the screen is greater than 992px, the section flex direction changes to row */
  section {
-  grid-template-columns: repeat(2, 1fr);
+  flex-direction: row;
  }
 
  section img {
