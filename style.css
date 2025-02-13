@@ -1,0 +1,137 @@
+/* Resets the default box-sizing, margin, and padding for all elements */
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+/* Sets the documents base font size, font family, and screen height */
+html,
+body {
+ font-size: 16px;
+ font-family: "Poppins", sans-serif;
+ block-size: 100%;
+}
+
+/* Removes the underline from the Play Now buttons and sets the mouse style to pointer */
+a {
+ text-decoration: none;
+ cursor: pointer;
+}
+
+/* Sets a max width for images */
+img {
+ max-inline-size: 100%;
+}
+
+/* Centers the header content, sets the background color, and adds some padding around the content */
+header {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: 1em;
+ min-block-size: 100%;
+ background: #f6f8fc;
+ padding: 1em;
+}
+
+/* Sets the font size to 40px (2.5 * 16px), font weight, and color */
+header h1 {
+ font-size: 2.5em;
+ font-weight: 500;
+ color: #202124;
+}
+
+/* Sets a max width of 768px (48 * 16px), color, and line height */
+header p {
+ max-inline-size: 48em;
+ color: #656565;
+ line-height: 1.6;
+}
+
+/* Adds some padding to the main content */
+main {
+ padding: 1em;
+}
+
+/* Sets the display to grid with a 48px (3 * 16px) gap, a max  */
+section {
+ display: grid;
+ gap: 3em;
+ max-inline-size: 70em;
+ padding-block: 6em;
+ margin-inline: auto;
+ border-block-end: 1px solid #f4f4f4;
+}
+
+/* Removes the bottom border from the last section element */
+section:last-of-type {
+ border-block-end: none;
+}
+
+/*  */
+section img {
+ display: block;
+ border-radius: 1em;
+ inline-size: 100%;
+ order: 0;
+}
+
+article {
+ display: flex;
+ flex-direction: column;
+ order: 1;
+}
+
+article h2 {
+ font-size: 2em;
+ font-weight: 500;
+ color: #202124;
+ margin-block-end: .5rem;
+}
+
+article p {
+ color: #656565;
+ margin-block-end: 1em;
+ line-height: 1.6;
+}
+
+article a {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ padding: .75em 1.25em;
+ color: #202124;
+ background: #39ff14;
+ border-radius: .5em;
+ transition: 250ms ease;
+}
+
+article a:hover {
+ background: #25c509;
+}
+
+footer {
+ background: #f6f8fc;
+ padding: 3em;
+}
+
+footer p {
+ text-align: center;
+ font-size: .875em;
+}
+
+@media screen and (min-width: 992px) {
+ section {
+  grid-template-columns: repeat(2, 1fr);
+ }
+
+ section img {
+  order: initial;
+ }
+
+ section article {
+  order: initial;
+ }
+}
